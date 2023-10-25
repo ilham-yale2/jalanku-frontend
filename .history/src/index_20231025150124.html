@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-slate-200">
+    <div class="flex justify-center w-full min-h-screen">
+        <div class="w-full max-w-md px-4 py-5 bg-slate-100">
+            <div class="fixed top-0 left-0 w-full h-screen duration-300 ease-in-out opacity-0 loader bg-slate-100">
+                <div class="duration-300 ease-in-out delay-200 object-1 objects before:bg-slate-100">
+                </div>
+                <div class="duration-300 ease-in-out delay-200 object-2 objects before:bg-slate-100"></div>
+                <div class="absolute duration-500 ease-in-out scale-0 logo">
+                    <img src="/src/images/logo.png" width="130px" alt="">
+                </div>
+                <div class="absolute z-10 w-full text-center duration-500 ease-in-out opacity-0 bottom-6 text-loader">
+                    <div class="text-base">
+                        2023 Developed by
+                    </div>
+                    <div class="text-lg font-bold">
+                        SIDESCRIPT.ID
+                    </div>
+                </div>
+            </div>
+            <div id="content" style="display: none;">
+                <div class="p-4 text-white bg-gradient-to-r from-red-600 to-yellow-400 rounded-2xl"> 
+                    <h3 class="mb-4 text-xl font-semibold ">Data Tracked</h3>
+                    <div class="flex flex-wrap w-full">
+                        <div class="w-1/2">
+                            <h6>Coordinates</h6>
+                            <p class="text-2xl font-bold">2000+</p>
+                        </div>
+                        <div class="w-1/2">
+                            <h6>Recorded</h6>
+                            <p class="text-2xl font-bold">2000+</p>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="mt-5 mb-4 text-2xl font-bold">
+                    Menu
+                </h3>
+                <div class="bg-gradient-to-r from-red-600 to-yellow-400 p-0.5 rounded-2xl group mb-3" onclick="window.location.href='/src/about.html'">
+                    <div class="flex p-4 transition duration-500 ease-in-out rounded-2xl bg-slate-100 hover:bg-transparent menu-items">
+                        <div class="menu-icons">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="66" height="68" viewBox="0 0 20 22" fill="none">
+                                <path d="M1 9C1 5.229 1 3.343 2.172 2.172C3.343 1 5.229 1 9 1H11C14.771 1 16.657 1 17.828 2.172C19 3.343 19 5.229 19 9V13C19 16.771 19 18.657 17.828 19.828C16.657 21 14.771 21 11 21H9C5.229 21 3.343 21 2.172 19.828C1 18.657 1 16.771 1 13V9Z" stroke="url(#paint0_linear_1466_1541)" stroke-width="1.5"/>
+                                <path d="M6 9H14M6 13H11" stroke="url(#paint1_linear_1466_1541)" stroke-width="1.5" stroke-linecap="round"/>
+                                <defs>
+                                    <linearGradient id="paint0_linear_1466_1541" x1="10" y1="1" x2="10" y2="21" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#FF0000"/>
+                                    <stop offset="1" stop-color="#FDBD01"/>
+                                    </linearGradient>
+                                    <linearGradient id="paint1_linear_1466_1541" x1="10" y1="9" x2="10" y2="13" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#FF0000"/>
+                                    <stop offset="1" stop-color="#FDBD01"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="px-3 duration-300 ease-in-out group-hover:text-white">
+                            <div class="text-lg font-semibold capitalize">tentang jalanku</div>
+                            <p class="text-base">Pelajari tentang jalanku dan metode yang dipakai</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-red-600 to-yellow-400 p-0.5 rounded-2xl group mb-3" onclick="window.location.href='/src/cam.html'">
+                    <div class="flex p-4 transition duration-500 ease-in-out rounded-2xl bg-slate-100 hover:bg-transparent menu-items">
+                        <div class="menu-icons">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="66" height="68" viewBox="0 0 22 20" fill="none">
+                                <path d="M11 14C12.6569 14 14 12.6569 14 11C14 9.34315 12.6569 8 11 8C9.34315 8 8 9.34315 8 11C8 12.6569 9.34315 14 11 14Z" stroke="url(#paint0_linear_1469_1545)" stroke-width="1.5"/>
+                                <path d="M8.778 19H13.222C16.343 19 17.904 19 19.025 18.265C19.5087 17.948 19.9253 17.5389 20.251 17.061C21 15.961 21 14.428 21 11.364C21 8.29905 21 6.76705 20.251 5.66705C19.9253 5.18916 19.5087 4.78005 19.025 4.46305C18.305 3.99005 17.403 3.82105 16.022 3.76105C15.363 3.76105 14.796 3.27105 14.667 2.63605C14.5684 2.17092 14.3123 1.75408 13.9418 1.456C13.5714 1.15791 13.1095 0.996855 12.634 1.00005H9.366C8.378 1.00005 7.527 1.68505 7.333 2.63605C7.204 3.27105 6.637 3.76105 5.978 3.76105C4.598 3.82105 3.696 3.99105 2.975 4.46305C2.49162 4.78011 2.07537 5.18922 1.75 5.66705C1 6.76705 1 8.29905 1 11.364C1 14.428 1 15.96 1.749 17.061C2.073 17.537 2.489 17.946 2.975 18.265C4.096 19 5.657 19 8.778 19Z" stroke="url(#paint1_linear_1469_1545)" stroke-width="1.5"/>
+                                <path d="M18 8H17" stroke="url(#paint2_linear_1469_1545)" stroke-width="1.5" stroke-linecap="round"/>
+                                <defs>
+                                  <linearGradient id="paint0_linear_1469_1545" x1="11" y1="8" x2="11" y2="14" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#FB0200"/>
+                                    <stop offset="1" stop-color="#FDBE01"/>
+                                  </linearGradient>
+                                  <linearGradient id="paint1_linear_1469_1545" x1="11" y1="1" x2="11" y2="19" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#FB0200"/>
+                                    <stop offset="1" stop-color="#FDBE01"/>
+                                  </linearGradient>
+                                  <linearGradient id="paint2_linear_1469_1545" x1="17.5" y1="8" x2="17.5" y2="9" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#FB0200"/>
+                                    <stop offset="1" stop-color="#FDBE01"/>
+                                  </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="px-3 duration-300 ease-in-out group-hover:text-white">
+                            <div class="text-lg font-semibold capitalize">Mulai pendeteksian </div>
+                            <p class="text-base">Pelajari tentang jalanku dan metode yang dipakai</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script>
+
+    
+        window.addEventListener("load", function () {
+            // Hide the loader
+            var loader = document.querySelector(".loader")
+            var object1 = document.querySelector('.object-1')
+            var object2 = document.querySelector('.object-2')
+            var textLoader = document.querySelector('.text-loader')
+            var logo = document.querySelector('.logo')
+            loader.classList.add('opacity-100')
+            object1.classList.add('show')
+            object2.classList.add('show')
+            textLoader.classList.add('opacity-100')
+            textLoader.classList.add('scale-1')
+            setTimeout(function() {
+                var content = document.getElementById("content");
+                content.style.display = "block";
+                loader.classList.remove('opacity-100')
+                setTimeout( () => {
+                    loader.style.display = "none"
+                }, 400)
+            }, 1500);
+           
+            
+            // Display the content
+        });
+    </script>
+</body>
+</html>

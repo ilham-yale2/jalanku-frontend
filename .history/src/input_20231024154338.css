@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.menu-items:hover .menu-icons path{
+  stroke: white;
+}
+
+#webcam{
+  transform: scaleX(-1);
+}

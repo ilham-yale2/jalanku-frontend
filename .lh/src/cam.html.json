@@ -1,0 +1,46 @@
+{
+    "sourceFile": "src/cam.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1698134813669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1698135100605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,12 +6,28 @@\n   <link href=\"/dist/output.css\" rel=\"stylesheet\">\r\n </head>\r\n <body class=\"bg-slate-200\">\r\n     <div class=\"flex justify-center w-full min-h-screen\">\r\n+\r\n         <div class=\"w-full max-w-md px-4 py-5 bg-slate-100\">\r\n             \r\n+            <div>\r\n+                <video id=\"webcam\" autoplay></video>\r\n+            </div>\r\n \r\n+    \r\n         </div>\r\n     </div>\r\n+    <script>\r\n+        // Get the webcam video feed\r\n+        navigator.mediaDevices.getUserMedia({ video: true })\r\n+            .then(function (stream) {\r\n+                var video = document.getElementById(\"webcam\");\r\n+                video.srcObject = stream;\r\n+            })\r\n+            .catch(function (error) {\r\n+                console.log(\"Error accessing webcam: \" + error.message);\r\n+            });\r\n+    </script>\r\n     <script src=\"https://code.iconify.design/3/3.1.0/iconify.min.js\"></script>\r\n </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1698135712514,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,17 +17,27 @@\n     \r\n         </div>\r\n     </div>\r\n     <script>\r\n-        // Get the webcam video feed\r\n-        navigator.mediaDevices.getUserMedia({ video: true })\r\n-            .then(function (stream) {\r\n-                var video = document.getElementById(\"webcam\");\r\n-                video.srcObject = stream;\r\n-            })\r\n-            .catch(function (error) {\r\n-                console.log(\"Error accessing webcam: \" + error.message);\r\n-            });\r\n+        const express = require('express');\r\n+        const https = require('https');\r\n+        const fs = require('fs');\r\n+        const path = require('path');\r\n+        \r\n+        const app = express();\r\n+        \r\n+        app.use(express.static(path.join(__dirname)));\r\n+        \r\n+        const options = {\r\n+          key: fs.readFileSync('server-key.pem'),\r\n+          cert: fs.readFileSync('server-cert.pem')\r\n+        };\r\n+        \r\n+        const server = https.createServer(options, app);\r\n+        \r\n+        server.listen(3000, () => {\r\n+          console.log('Server is running on https://localhost:3000');\r\n+        })\r\n     </script>\r\n     <script src=\"https://code.iconify.design/3/3.1.0/iconify.min.js\"></script>\r\n </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1698135830016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,12 +17,12 @@\n     \r\n         </div>\r\n     </div>\r\n     <script>\r\n-        const express = require('express');\r\n-        const https = require('https');\r\n-        const fs = require('fs');\r\n-        const path = require('path');\r\n+        const express = require('../express');\r\n+        const https = require('../https');\r\n+        const fs = require('../fs');\r\n+        const path = require('../path');\r\n         \r\n         const app = express();\r\n         \r\n         app.use(express.static(path.join(__dirname)));\r\n"
+                },
+                {
+                    "date": 1698135928768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,27 +17,17 @@\n     \r\n         </div>\r\n     </div>\r\n     <script>\r\n-        const express = require('../express');\r\n-        const https = require('../https');\r\n-        const fs = require('../fs');\r\n-        const path = require('../path');\r\n-        \r\n-        const app = express();\r\n-        \r\n-        app.use(express.static(path.join(__dirname)));\r\n-        \r\n-        const options = {\r\n-          key: fs.readFileSync('server-key.pem'),\r\n-          cert: fs.readFileSync('server-cert.pem')\r\n-        };\r\n-        \r\n-        const server = https.createServer(options, app);\r\n-        \r\n-        server.listen(3000, () => {\r\n-          console.log('Server is running on https://localhost:3000');\r\n-        })\r\n+        // Get the webcam video feed\r\n+        navigator.mediaDevices.getUserMedia({ video: true })\r\n+            .then(function (stream) {\r\n+                var video = document.getElementById(\"webcam\");\r\n+                video.srcObject = stream;\r\n+            })\r\n+            .catch(function (error) {\r\n+                console.log(\"Error accessing webcam: \" + error.message);\r\n+            });\r\n     </script>\r\n     <script src=\"https://code.iconify.design/3/3.1.0/iconify.min.js\"></script>\r\n </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1698136326554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     <div class=\"flex justify-center w-full min-h-screen\">\r\n \r\n         <div class=\"w-full max-w-md px-4 py-5 bg-slate-100\">\r\n             \r\n-            <div>\r\n+            <div class=\"overflow-hidden \">\r\n                 <video id=\"webcam\" autoplay></video>\r\n             </div>\r\n \r\n     \r\n"
+                },
+                {
+                    "date": 1698136335961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     <div class=\"flex justify-center w-full min-h-screen\">\r\n \r\n         <div class=\"w-full max-w-md px-4 py-5 overflow-hidden bg-slate-100\">\r\n             \r\n-            <div class=\"overflow-hidden \">\r\n+            <div class=\"w-full overflow-hidden\">\r\n                 <video id=\"webcam\" autoplay></video>\r\n             </div>\r\n \r\n     \r\n"
+                },
+                {
+                    "date": 1698136390513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n </head>\r\n <body class=\"bg-slate-200\">\r\n     <div class=\"flex justify-center w-full min-h-screen\">\r\n \r\n-        <div class=\"w-full max-w-md px-4 py-5 overflow-hidden bg-slate-100\">\r\n+        <div class=\"w-full max-w-xs px-4 py-5 overflow-hidden bg-slate-100\">\r\n             \r\n             <div class=\"w-full overflow-hidden\">\r\n                 <video id=\"webcam\" autoplay></video>\r\n             </div>\r\n"
+                }
+            ],
+            "date": 1698134813669,
+            "name": "Commit-0",
+            "content": "<!doctype html>\r\n<html>\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n  <link href=\"/dist/output.css\" rel=\"stylesheet\">\r\n</head>\r\n<body class=\"bg-slate-200\">\r\n    <div class=\"flex justify-center w-full min-h-screen\">\r\n        <div class=\"w-full max-w-md px-4 py-5 bg-slate-100\">\r\n            \r\n\r\n        </div>\r\n    </div>\r\n    <script src=\"https://code.iconify.design/3/3.1.0/iconify.min.js\"></script>\r\n</body>\r\n</html>"
+        }
+    ]
+}

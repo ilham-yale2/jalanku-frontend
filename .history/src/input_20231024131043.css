@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.menu-icons .iconify {
+    font-size: 50px; /* Adjust the icon size as needed */
+    position: relative;
+  }
+
+  .menu-icons .iconify::before {
+    content: attr(data-icon); /* Display the icon content */
+    background: -webkit-linear-gradient(45deg, #FF0B0B, #FB5104);
+    /* -webkit-background-clip: text; */
+    color: transparent;
+    display: block;
+    position: absolute;
+    font-size: 30px;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    top: 0;
+  }

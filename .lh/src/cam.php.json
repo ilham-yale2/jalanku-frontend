@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/cam.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1698136000140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1698136000140,
+            "name": "Commit-0",
+            "content": "<!doctype html>\r\n<html>\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n  <link href=\"/dist/output.css\" rel=\"stylesheet\">\r\n</head>\r\n<body class=\"bg-slate-200\">\r\n    <div class=\"flex justify-center w-full min-h-screen\">\r\n\r\n        <div class=\"w-full max-w-md px-4 py-5 bg-slate-100\">\r\n            \r\n            <div>\r\n                <video id=\"webcam\" autoplay></video>\r\n            </div>\r\n\r\n    \r\n        </div>\r\n    </div>\r\n    <script>\r\n        // Check for navigator.mediaDevices.getUserMedia availability\r\n        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {\r\n            // Get the webcam video feed\r\n            navigator.mediaDevices.getUserMedia({ video: true })\r\n                .then(function (stream) {\r\n                    var video = document.getElementById(\"webcam\");\r\n                    video.srcObject = stream;\r\n                })\r\n                .catch(function (error) {\r\n                    console.log(\"Error accessing webcam: \" + error.message);\r\n                });\r\n        } else {\r\n            console.log(\"getUserMedia is not available in this browser.\");\r\n        }\r\n    </script>\r\n    <script src=\"https://code.iconify.design/3/3.1.0/iconify.min.js\"></script>\r\n</body>\r\n</html>"
+        }
+    ]
+}

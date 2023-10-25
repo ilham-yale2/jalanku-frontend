@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.menu-items:hover .menu-icons path{
+  stroke: white;
+}
+
+#webcam{
+  transform: scaleX(-1);
+  height: 70vh;
+}
+
+.loader .object-1{
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+
+}

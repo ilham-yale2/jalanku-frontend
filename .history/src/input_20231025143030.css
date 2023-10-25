@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.menu-items:hover .menu-icons path{
+  stroke: white;
+}
+
+#webcam{
+  transform: scaleX(-1);
+  height: 70vh;
+}
+
+.loader .object-1{
+  height: 500px;
+  width: 500px;
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #F00 0%, #FFB40A 100%);
+  left: 50%;
+  transform: translateX(-50%) translateY(550px);
+}
+
+.loader .object-2{
+  height: 500px;
+  width: 500px;
+  position: absolute;
+  top: 0;
+  border-radius: 50%;
+  border-radius: 534px;
+  background: linear-gradient(180deg, #F00 0%, #FFB40A 100%);
+  left: 50%;
+  transform: translateX(-50%) translateY(-550px);
+}
+
+.loader .object-1::before{
+  content: '';
+  position: absolute;
+  /* background: white; */
+  height: 70%;
+  width: 70%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.loader .object-1.show{
+  transform: translateX(-50%) translateY(250px);
+
+}
