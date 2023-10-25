@@ -886,6 +886,27 @@ video {
   transform: translate(-50%, -50%);
 }
 
+@media (max-width:767px) {
+  .loader .object-1::before , .loader .object-2::before{
+    content: '';
+    position: absolute;
+    height: 80%;
+    width: 80%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+
+  .loader .text-loader{
+    bottom: 4.7rem;
+  }
+
+  .loader .object-2.show{
+    transform: translateX(-50%) translateY(-350px);
+  }
+}
+
 .before\:bg-slate-100::before {
   content: var(--tw-content);
   --tw-bg-opacity: 1;
@@ -900,4 +921,3 @@ video {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-
