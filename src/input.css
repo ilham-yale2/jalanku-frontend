@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
 
 *{
   font-family: 'Montserrat', sans-serif;
@@ -12,8 +12,9 @@
 }
 
 #webcam{
-  transform: scaleX(-1);
-  /* height: 70vh; */
+  transform: translate(-50%, -50%) scaleX(-1);
+  max-width: unset!important;
+  height: 100%;
 }
 
 .loader .objects{
@@ -60,6 +61,14 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.rounded-pill{
+  border-radius: 50em;
+}
+
+.track-list::-webkit-scrollbar{
+  display: none;
 }
 
 @media (max-width:767px) {
